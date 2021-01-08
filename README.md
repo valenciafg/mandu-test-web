@@ -2,8 +2,8 @@
 App front-end con tabla de divisiones
 
 ## Instalar paquetes
-yarn install
+### `yarn install`
 
 ## Ejecutar 
-yarn start
+### `yarn start`
 
