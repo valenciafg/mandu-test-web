@@ -1,25 +1,33 @@
-import logo from './logo.svg';
-import './App.css';
+import { Layout, Menu } from 'antd';
+// import MainHeader from './components/MainHeader';
+import MainFooter from './components/MainFooter';
+import Division from './components/Division';
+import { DivisionProvider } from './Context/division-context';
+import './App.scss';
+const { Header, Footer, Content } = Layout;
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Layout className="App">
+      <Header>
+        <Menu mode="horizontal">
+          <Menu.Item key="1">Dashboard</Menu.Item>
+          <Menu.Item key="2">Organización</Menu.Item>
+          <Menu.Item key="3">Modelos</Menu.Item>
+          <Menu.Item key="4">Seguimiento</Menu.Item>
+        </Menu>
+      </Header>
+      <Content style={{ padding: '20px 50px' }}>
+        <Division/>
+      </Content>
+      <Footer>
+        <MainFooter/>
+      </Footer>
+    </Layout>
   );
 }
 
-export default App;
+export default () => <DivisionProvider>
+  <App></App>
+</DivisionProvider>;
